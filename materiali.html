@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Materiali - EcoMe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    .materiali-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .materiali-section h2 {
+      color: #4caf50;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+      text-align: center;
+    }
+
+    .materiali-section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      text-align: center;
+      max-width: 800px;
+      margin: 0 auto 2rem;
+    }
+
+    .material-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+
+    .material {
+      background-color: #ffffff;
+      border: 2px solid #d3e8d0;
+      border-radius: 16px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.06);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .material:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+    }
+
+    .material h3 {
+      margin-bottom: 0.75rem;
+      color: #388e3c;
+      font-size: 1.2rem;
+    }
+
+    .material a {
+      display: inline-block;
+      margin-top: 0.5rem;
+      color: white;
+      background-color: #ffa726;
+      padding: 0.6rem 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .material a:hover {
+      background-color: #fb8c00;
+      transform: scale(1.05);
+    }
+
+    .btn-home {
+      display: block;
+      margin: 3rem auto 0;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn-home:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Materiali</h1>
+    <p>Scarica e diffondi la comunicazione EcoMe nel tuo territorio</p>
+  </header>
+
+  <section class="materiali-section">
+    <h2>📂 Strumenti utili per la diffusione</h2>
+    <p>Scarica materiali grafici e informativi pensati per scuole, circoli e cittadini attivi. Diffondi il progetto EcoMe nella tua comunità!</p>
+
+    <div class="material-list">
+      <div class="material">
+        <h3>📌 Logo EcoMe</h3>
+        <a href="immagini/logo.png" download>Scarica</a>
+      </div>
+      <div class="material">
+        <h3>📄 Poster delle Sfide</h3>
+        <a href="immagini/imm_1.jpeg">Scarica</a>
+      </div>
+      <div class="material">
+        <h3>🎤 Slide di presentazione</h3>
+        <a href="immagini/presentazione.pdf">Scarica</a>
+      </div>
+    </div>
+  </section>
+
+  <a class="btn-home" href="index.html">Torna alla Home</a>
+
+  <footer>
+    &copy; 2025 EcoMe - Iniziativa per la transizione ecologica. Contatti: info@ecome.it
+  </footer>
+</body>
+</html>

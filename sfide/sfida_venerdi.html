@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMe - Sfida del Venerdì</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .sfida-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .sfida-page h2 {
+      color: #4caf50;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .sfida-page p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .sfida-page img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+    .info-box {
+      background-color: #e0f2f1;
+      border-left: 6px solid #26a69a;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-bottom: 2rem;
+    }
+    .btn-home {
+      display: block;
+      margin: 2rem auto;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+    }
+    .call-to-action {
+      background-color: #f1f8e9;
+      border-left: 6px solid #8bc34a;
+      padding: 1.2rem;
+      border-radius: 8px;
+      margin-top: 2rem;
+      font-size: 1.15rem;
+      font-weight: 600;
+    }
+    .upload-box {
+      background-color: #f9f9f9;
+      padding: 1.5rem;
+      border: 2px dashed #c8e6c9;
+      border-radius: 12px;
+      text-align: center;
+      margin-top: 2rem;
+    }
+    .upload-box input[type="file"] {
+      display: block;
+      margin: 1rem auto;
+    }
+    .feedback-box {
+      background-color: #fff3e0;
+      padding: 1.5rem;
+      border-radius: 12px;
+      margin-top: 2rem;
+      border-left: 6px solid #ff9800;
+    }
+    .feedback-box textarea {
+      width: 100%;
+      padding: 1rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      resize: vertical;
+    }
+    .feedback-box button {
+      margin-top: 1rem;
+      background-color: #ff9800;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoMe</h1>
+    <p>Il cambiamento parte da me, passa per noi</p>
+  </header>
+
+  <section class="sfida-page">
+    <h2>📅 Venerdì: Detox Digitale Consapevole</h2>
+    <img src="../img/detox-digitale.jpg" alt="Detox Digitale">
+
+    <p>Oggi ti proponiamo una sfida diversa: <strong>staccati dallo schermo, per ricollegarti alla realtà.</strong> Dedica almeno <strong>3 ore consecutive senza cellulare</strong> e riscopri una pausa di libertà. Niente scroll, niente notifiche. Solo tu e il momento presente.</p>
+
+    <div class="info-box">
+      <p>💡 <strong>Come fare:</strong></p>
+      <ul>
+        <li>Metti il telefono in modalità aereo o non disturbare</li>
+        <li>Disattiva le notifiche per qualche ora</li>
+        <li>Programma la tua disconnessione (es. a pranzo, durante una camminata, leggendo un libro)</li>
+        <li>Racconta com'è andata, solo dopo!</li>
+      </ul>
+    </div>
+
+    <p>📖 Idee per il tuo tempo offline:</p>
+    <ul>
+      <li>Leggi un libro o ascolta musica offline</li>
+      <li>Esci in bici o fai una camminata nella natura</li>
+      <li>Scrivi, disegna, cucina, chiacchiera dal vivo</li>
+    </ul>
+
+    <div class="call-to-action">
+      📸 Prima di disconnetterti o subito dopo, scatta una foto del tuo momento offline e condividila con l’hashtag <strong>#EcoMeVenerdì</strong>. Dimostra che stare lontano dallo schermo... è un regalo per te!
+    </div>
+
+    <div class="upload-box">
+      <h3>📷 Carica la tua foto</h3>
+      <p>Hai vissuto un momento speciale senza cellulare? Raccontacelo visivamente: carica una foto di ciò che hai vissuto senza lo schermo.</p>
+      <input type="file" accept="image/*">
+    </div>
+
+    <div class="feedback-box">
+      <h3>📝 Racconta la tua esperienza</h3>
+      <p>Com'è andata la tua disconnessione? Cosa hai fatto e come ti sei sentito/a? Condividilo con noi e, se vuoi, con i tuoi amici!</p>
+      <textarea rows="6" placeholder="Scrivi qui la tua esperienza..."></textarea>
+      <button onclick="alert('Grazie per aver condiviso la tua esperienza!')">Condividi</button>
+    </div>
+  </section>
+
+  <a class="btn-home" href="../sfide.html">Torna alle Sfide</a>
+
+  <footer>
+    &copy; 2025 EcoMe - Iniziativa per la transizione ecologica. Contatti: info@ecome.it
+  </footer>
+</body>
+</html>

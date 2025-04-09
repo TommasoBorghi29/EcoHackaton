@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMe - Il cambiamento parte da me</title>
+  <img src="immagini/logo.png" alt="Logo EcoMe" class="logo-header" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css?v=2">
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 2rem 1rem;
+    }
+
+    .hero button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .hero button:hover {
+      background-color: #388e3c;
+      transform: scale(1.05);
+    }
+
+    .logo-container {
+      display: flex;
+      justify-content: center;
+      margin-top: 1rem;
+      animation: fadeInLogo 1.2s ease-in-out both;
+    }
+
+    .logo-container img {
+      width: 30vw;
+      max-width: 160px;
+      height: auto;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.2));
+    }
+
+    @keyframes fadeInLogo {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoMe</h1>
+    <p>Il cambiamento parte da me, passa per noi</p>
+    <div class="logo-container">
+      <img src="img/logo-ecome.png" alt="">
+    </div>
+  </header>
+
+  <nav>
+    <a href="cose_ecome.html">Cosa è EcoMe</a>
+    <a href="sfide.html">Sfide</a>
+    <a href="ecoradar.html">EcoRadar</a>
+    <a href="tesseramento.html">Tesseramento</a>
+    <a href="materiali.html">Materiali</a>
+  </nav>
+
+  <section class="hero">
+    <h2>Unisciti al cambiamento ecologico</h2>
+    <p>Scopri come le tue azioni quotidiane possono diventare il motore della transizione ecologica. Partecipa alle sfide, contribuisci a EcoRadar, e diventa parte della community EcoMe.</p>
+    <button onclick="location.href='sfide.html'">Partecipa ora</button>
+  
+    <div style="margin-top: 1.5rem;">
+      <a href="https://chat.whatsapp.com/ILTUOCODICEINVITO" target="_blank" class="btn-whatsapp">
+        💬 Unisciti alla community WhatsApp
+      </a>
+    </div>
+  </section>
+  
+
+  <footer>
+    &copy; 2025 EcoMe - Iniziativa per la transizione ecologica. Contatti: info@ecome.it
+  </footer>
+</body>
+</html>

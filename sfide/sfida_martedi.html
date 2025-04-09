@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoMe - Sfida del Martedì</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .sfida-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .sfida-page h2 {
+      color: #4caf50;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .sfida-page h3 {
+      margin-top: 2rem;
+      color: #388e3c;
+    }
+    .sfida-page p, .sfida-page li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .sfida-page ul {
+      padding-left: 1.2rem;
+    }
+    .highlight {
+      background-color: #e8f5e9;
+      border-left: 4px solid #66bb6a;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .form-box, .experience-box {
+      background-color: #f0fdf4;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #c8e6c9;
+      margin-top: 2rem;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: 600;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .btn {
+      margin-top: 1.5rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #388e3c;
+      transform: scale(1.03);
+    }
+    #risultato {
+      margin-top: 1rem;
+      font-weight: bold;
+      color: #2e7d32;
+    }
+    #conferma {
+      display: none;
+      margin-top: 1rem;
+      color: #2e7d32;
+      font-weight: bold;
+    }
+    .btn-home {
+      display: block;
+      margin: 3rem auto 0;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoMe</h1>
+    <p>Il cambiamento parte da me, passa per noi</p>
+  </header>
+
+  <section class="sfida-page">
+    <h2>🔌 Martedì: Energia consapevole</h2>
+    <p>Oggi ci concentriamo sul ridurre il consumo di energia elettrica. Spegni gli apparecchi in standby, usa meno luce artificiale e sfrutta la luce naturale. Ogni kilowattora risparmiato è un regalo al pianeta!</p>
+
+    <div class="highlight">
+      <h3>🎯 Obiettivo concreto della sfida:</h3>
+      <ul>
+        <li>Spegni tutti i dispositivi non essenziali per almeno 6 ore</li>
+        <li>Non usare luci artificiali se non necessario</li>
+        <li>Monitora almeno 1 apparecchio spento per valutare l’impatto</li>
+      </ul>
+    </div>
+
+    <div class="highlight">
+      <p>📊 In media, ogni casa in Italia consuma circa <strong>10 kWh al giorno</strong>. Ridurli anche solo del 20% può abbattere enormemente la tua impronta ambientale.</p>
+    </div>
+
+    <h3>💡 Idee pratiche per risparmiare energia:</h3>
+    <ul>
+      <li>Spegni le multiprese la notte</li>
+      <li>Evita la modalità standby: spegni davvero</li>
+      <li>Stacca i caricabatterie non in uso</li>
+      <li>Fai le lavatrici o lavastoviglie solo a pieno carico</li>
+    </ul>
+
+    <div class="form-box">
+      <h3>🧮 Calcola il tuo risparmio energetico</h3>
+      <form id="energiaForm">
+        <label for="dispositivo">Dispositivo spento</label>
+        <select id="dispositivo">
+          <option value="tv">TV in standby (0.5W/h)</option>
+          <option value="pc">Computer fisso (200W/h)</option>
+          <option value="lampada">Lampada LED (10W/h)</option>
+          <option value="console">Console giochi (150W/h)</option>
+          <option value="caricatore">Caricatore non in uso (0.1W/h)</option>
+        </select>
+
+        <label for="ore">Ore spento</label>
+        <input type="number" id="ore" min="0" step="0.5" />
+
+        <button type="button" class="btn" onclick="calcolaRisparmioEnergia()">💡 Calcola risparmio</button>
+        <div id="risultato"></div>
+      </form>
+    </div>
+
+    <div class="experience-box">
+      <h3>📘 Racconta la tua esperienza</h3>
+      <form id="esperienzaForm" onsubmit="inviaEsperienza(event)">
+        <label for="testimonianza">Com'è andata la tua giornata a energia consapevole?</label>
+        <textarea id="testimonianza" rows="5" placeholder="Scrivi qui la tua esperienza..."></textarea>
+
+        <label for="foto">Carica una foto</label>
+        <input type="file" id="foto" accept="image/*">
+
+        <button type="submit" class="btn">📤 Invia</button>
+        <div id="conferma">✅ Commento inviato!</div>
+      </form>
+    </div>
+
+    <p style="margin-top: 2rem;">📸 Condividi la tua sfida sui social con <strong>#EcoMeMartedì</strong> e coinvolgi i tuoi amici!</p>
+  </section>
+
+  <a class="btn-home" href="../sfide.html">Torna alle Sfide</a>
+
+  <footer>
+    &copy; 2025 EcoMe - Iniziativa per la transizione ecologica. Contatti: info@ecome.it
+  </footer>
+
+  <script>
+    const consumi = {
+      tv: 0.5,
+      pc: 200,
+      lampada: 10,
+      console: 150,
+      caricatore: 0.1
+    };
+
+    function calcolaRisparmioEnergia() {
+      const tipo = document.getElementById("dispositivo").value;
+      const ore = parseFloat(document.getElementById("ore").value);
+
+      if (!ore || ore <= 0) {
+        document.getElementById("risultato").innerText = "Inserisci un numero di ore valido";
+        return;
+      }
+
+      const watt = consumi[tipo];
+      const risparmio = (watt * ore) / 1000;
+      const euro = risparmio * 0.25;
+
+      document.getElementById("risultato").innerHTML =
+        `⚡ Hai risparmiato circa <strong>${risparmio.toFixed(2)} kWh</strong> ` +
+        `(~€${euro.toFixed(2)}) oggi tenendo spento questo dispositivo.`;
+    }
+
+    function inviaEsperienza(event) {
+      event.preventDefault();
+      document.getElementById("conferma").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("conferma").style.display = "none";
+        document.getElementById("esperienzaForm").reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

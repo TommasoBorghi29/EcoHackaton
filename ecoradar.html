@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoRadar - EcoMe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .ecoradar-section {
+      max-width: 1000px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    .ecoradar-section h2 {
+      color: #4caf50;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .ecoradar-section p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .form-container {
+      background-color: #f0fdf4;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 2px solid #c8e6c9;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.05);
+    }
+
+    .form-container label {
+      font-weight: 600;
+      margin-top: 1rem;
+      display: block;
+    }
+
+    .form-container input,
+    .form-container textarea {
+      width: 100%;
+      padding: 0.75rem;
+      margin-top: 0.5rem;
+      margin-bottom: 1.2rem;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+
+    .form-container button {
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #388e3c;
+      transform: scale(1.03);
+    }
+
+    .btn-home {
+      display: block;
+      margin: 3rem auto 0;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+
+    .btn-home:hover {
+      background-color: #2e7d32;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoRadar</h1>
+    <p>Segnala, mappa, partecipa. Dai voce al tuo territorio.</p>
+  </header>
+
+  <section class="ecoradar-section fade-in">
+    <h2>📡 Cos'è EcoRadar?</h2>
+    <p>EcoRadar è lo strumento partecipativo di EcoMe: una mappa collettiva basata sulla <strong>citizen science</strong>. Ti consente di segnalare luoghi positivi o problematici legati all'ambiente: zone verdi, degrado urbano, discariche abusive, o buone pratiche ecologiche.</p>
+
+    <h2>📝 Invia la tua segnalazione</h2>
+    <div class="form-container">
+      <form id="form-ecoradar">
+        <label for="nome">👤 Nome</label>
+        <input type="text" id="nome" name="nome" placeholder="Il tuo nome">
+
+        <label for="email">📧 Email</label>
+        <input type="email" id="email" name="email" placeholder="La tua email">
+
+        <label for="luogo">📍 Luogo della segnalazione</label>
+        <input type="text" id="luogo" name="luogo" placeholder="Es. Parco Nord, Milano">
+
+        <label for="tipo">🔎 Tipo di segnalazione</label>
+        <input type="text" id="tipo" name="tipo" placeholder="Es. Discarica abusiva, area verde, ecc.">
+
+        <label for="descrizione">🗣️ Descrizione</label>
+        <textarea id="descrizione" name="descrizione" rows="4" placeholder="Inserisci una descrizione dettagliata..."></textarea>
+
+        <button type="submit">📤 Invia segnalazione</button>
+      </form>
+    </div>
+  </section>
+
+  <a class="btn-home" href="index.html">Torna alla Home</a>
+
+  <footer>
+    &copy; 2025 EcoMe - Iniziativa per la transizione ecologica. Contatti: info@ecome.it
+  </footer>
+  <script>
+    const formEcoRadar = document.getElementById('form-ecoradar');
+    if (formEcoRadar) {
+      formEcoRadar.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('📍 Segnalazione inviata! Grazie per aver contribuito a EcoRadar, il tuo territorio ti ringrazia 🌿');
+        formEcoRadar.reset();
+      });
+    }
+  
+    const formTesseramento = document.getElementById('form-tesseramento');
+    if (formTesseramento) {
+      formTesseramento.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('🎉 Grazie per esserti tesserato! 🌱');
+        formTesseramento.reset();
+      });
+    }
+  </script>
+</body>
+</html>

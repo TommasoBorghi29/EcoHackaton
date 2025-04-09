@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoMe - Sfida del Sabato</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .sfida-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .sfida-page h2 {
+      color: #4caf50;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .sfida-page h3 {
+      margin-top: 2rem;
+      color: #388e3c;
+    }
+    .sfida-page p, .sfida-page li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .sfida-page ul {
+      padding-left: 1.2rem;
+    }
+    .highlight {
+      background-color: #fff8e1;
+      border-left: 4px solid #ffb300;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .form-box {
+      background-color: #f0fdf4;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #c8e6c9;
+      margin-top: 2rem;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: 600;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .btn {
+      margin-top: 1.5rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #388e3c;
+      transform: scale(1.03);
+    }
+    #conferma {
+      display: none;
+      margin-top: 1rem;
+      color: #2e7d32;
+      font-weight: bold;
+    }
+    .btn-home {
+      display: block;
+      margin: 3rem auto 0;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoMe</h1>
+    <p>Il cambiamento parte da me, passa per noi</p>
+  </header>
+
+  <section class="sfida-page">
+    <h2>🛍️ Sabato: Acquisti responsabili</h2>
+    <img src="../img/acquisti-responsabili.jpg" alt="Acquisti responsabili" />
+
+    <p>Ogni acquisto è una scelta. Oggi compra solo ciò che ti serve davvero, scegliendo prodotti locali, usati o durevoli. Sii consapevole del tuo potere d'acquisto.</p>
+
+    <div class="highlight">
+      <h3>🎯 Obiettivo concreto della sfida:</h3>
+      <ul>
+        <li>Evita ogni acquisto superfluo</li>
+        <li>Scegli almeno 1 prodotto usato o locale</li>
+        <li>Conserva lo scontrino (fisico o mentale) solo se necessario</li>
+      </ul>
+    </div>
+
+    <div class="highlight">
+      <p>📊 In media, ogni persona spende 40€ a settimana in acquisti non essenziali. Anche solo evitarne uno oggi può fare la differenza (per te e per il pianeta).</p>
+    </div>
+
+    <h3>💡 Idee pratiche per la sfida:</h3>
+    <ul>
+      <li>Visita un mercatino dell’usato</li>
+      <li>Compra da produttori locali o sfusi</li>
+      <li>Ripara qualcosa invece di ricomprarlo</li>
+      <li>Fai un “no-buy day” e tieni traccia</li>
+    </ul>
+
+    <div class="form-box">
+      <h3>📘 Racconta la tua esperienza</h3>
+      <form id="esperienzaForm" onsubmit="inviaEsperienza(event)">
+        <label for="testimonianza">Hai fatto acquisti consapevoli oggi? Raccontaci!</label>
+        <textarea id="testimonianza" rows="5" placeholder="Scrivi qui la tua esperienza..."></textarea>
+
+        <label for="foto">Carica una foto</label>
+        <input type="file" id="foto" accept="image/*">
+
+        <button type="submit" class="btn">📤 Invia</button>
+        <div id="conferma">✅ Commento inviato!</div>
+      </form>
+    </div>
+
+    <p style="margin-top: 2rem;">📸 Condividi il tuo acquisto etico sui social con <strong>#EcoMeSabato</strong> e ispira altri a comprare con consapevolezza!</p>
+  </section>
+
+  <a class="btn-home" href="../sfide.html">Torna alle Sfide</a>
+
+  <footer>
+    &copy; 2025 EcoMe - Iniziativa per la transizione ecologica. Contatti: info@ecome.it
+  </footer>
+
+  <script>
+    function inviaEsperienza(event) {
+      event.preventDefault();
+      document.getElementById("conferma").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("conferma").style.display = "none";
+        document.getElementById("esperienzaForm").reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

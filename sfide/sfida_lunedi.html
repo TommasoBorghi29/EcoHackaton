@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoMe - Sfida del Lunedì</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .sfida-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .sfida-page h2 {
+      color: #4caf50;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .sfida-page h3 {
+      margin-top: 2rem;
+      color: #388e3c;
+    }
+    .sfida-page p, .sfida-page li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .sfida-page ul {
+      padding-left: 1.2rem;
+    }
+    .sfida-page img {
+      width: 100%;
+      max-height: 300px;
+      object-fit: cover;
+      border-radius: 12px;
+      margin-bottom: 2rem;
+    }
+    .highlight {
+      background-color: #e8f5e9;
+      border-left: 4px solid #66bb6a;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .form-box {
+      background-color: #f0fdf4;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #c8e6c9;
+      margin-top: 2rem;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: 600;
+    }
+    input, select {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .btn-calcola {
+      margin: 2rem auto 0;
+      display: block;
+      background-color: #388e3c;
+      color: white;
+      border: none;
+      padding: 1rem 2rem;
+      font-size: 1.1rem;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .btn-calcola:hover {
+      background-color: #2e7d32;
+      transform: scale(1.03);
+    }
+    #risultato {
+      margin-top: 1.5rem;
+      font-weight: bold;
+      color: #2e7d32;
+      line-height: 1.6;
+    }
+    .btn-home {
+      display: block;
+      margin: 3rem auto 0;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoMe</h1>
+    <p>Il cambiamento parte da me, passa per noi</p>
+  </header>
+
+  <section class="sfida-page">
+    <h2>🗓️ Lunedì: Mobilità sostenibile</h2>
+    <img src="../img/mobilita-sostenibile.jpg" alt="Mobilità sostenibile">
+    <p>Vai a scuola o al lavoro usando la bici, i mezzi pubblici o a piedi. Ogni passo o pedalata è un contributo alla salute del pianeta… e alla tua!</p>
+
+    <div class="highlight">
+      <h3>🎯 Obiettivo concreto della sfida:</h3>
+      <ul>
+        <li>Evita l’auto personale per l’intera giornata</li>
+        <li>Usa solo mezzi sostenibili: piedi, bici, bus o treno</li>
+        <li>Scopri un nuovo percorso urbano più verde</li>
+      </ul>
+    </div>
+
+    <div class="highlight">
+      <p>📊 Lo sapevi? In Italia ogni persona produce mediamente oltre <strong>4,5 kg di CO₂ al giorno solo per la mobilità</strong>. Oggi puoi abbatterla fino a <strong>zero</strong>!</p>
+    </div>
+
+    <h3>💡 Idee pratiche per riuscirci:</h3>
+    <ul>
+      <li>Vai al lavoro o a scuola in bici o a piedi</li>
+      <li>Prendi l’autobus o il treno per gli spostamenti lunghi</li>
+      <li>Fai carpooling se devi per forza usare un’auto</li>
+    </ul>
+
+    <div class="form-box">
+      <h3>🧮 Calcola il tuo risparmio ambientale e economico</h3>
+      <form id="mobilitaForm">
+        <label for="categoria">Categoria del veicolo</label>
+        <select id="categoria" onchange="aggiornaAlimentazioni()" required></select>
+
+        <label for="alimentazione">Alimentazione</label>
+        <select id="alimentazione" required></select>
+
+        <label for="km">Km percorsi al giorno</label>
+        <input type="number" id="km" required>
+
+        <label for="mezzoAlternativo">Nuovo mezzo di trasporto</label>
+        <select id="mezzoAlternativo" required>
+          <option value="piedi">A piedi (gratis)</option>
+          <option value="bici">Bici (gratis)</option>
+          <option value="autobus">Autobus (€0.15/km)</option>
+          <option value="treno">Treno (€0.25/km)</option>
+        </select>
+
+        <button type="button" class="btn-calcola" onclick="calcolaRisparmioAvanzato()">💡 Calcola il tuo risparmio</button>
+        <div id="risultato"></div>
+      </form>
+    </div>
+
+    <p style="margin-top: 2rem;">📸 Condividi il tuo tragitto sostenibile con l’hashtag <strong>#EcoMeLunedì</strong> e ispira altri a cambiare!</p>
+  </section>
+
+  <a class="btn-home" href="../sfide.html">Torna alle Sfide</a>
+
+  <footer>
+    &copy; 2025 EcoMe - Iniziativa per la transizione ecologica. Contatti: info@ecome.it
+  </footer>
+
+  <script>
+    const consumiMedi = {
+      "City car": {"Benzina (l/100km)": 5.5, "Diesel (l/100km)": 4.5, "GPL (l/100km)": 6.5, "Ibrida (l/100km)": 4.25, "Elettrica (kWh/100km)": 13.5},
+      "Berlina": {"Benzina (l/100km)": 7.0, "Diesel (l/100km)": 5.5, "GPL (l/100km)": 7.75, "Ibrida (l/100km)": 4.75, "Elettrica (kWh/100km)": 16.5, "Idrogeno (kg/100km)": 1.0},
+      "Station Wagon": {"Benzina (l/100km)": 7.5, "Diesel (l/100km)": 5.75, "GPL (l/100km)": 8.5, "Ibrida (l/100km)": 5.25, "Elettrica (kWh/100km)": 17.5},
+      "Hatchback": {"Benzina (l/100km)": 6.25, "Diesel (l/100km)": 5.25, "GPL (l/100km)": 7.5, "Ibrida (l/100km)": 4.75, "Elettrica (kWh/100km)": 15.0},
+      "SUV": {"Benzina (l/100km)": 8.5, "Diesel (l/100km)": 7.0, "GPL (l/100km)": 10.0, "Ibrida (l/100km)": 6.5, "Elettrica (kWh/100km)": 19.5, "Idrogeno (kg/100km)": 1.2}
+    };
+
+    const prezzi = {
+      "Benzina (l/100km)": 1.85,
+      "Diesel (l/100km)": 1.75,
+      "GPL (l/100km)": 0.75,
+      "Ibrida (l/100km)": 1.80,
+      "Elettrica (kWh/100km)": 0.25,
+      "Idrogeno (kg/100km)": 12.00
+    };
+
+    const alternative = {
+      piedi: 0,
+      bici: 0,
+      autobus: 0.15,
+      treno: 0.25
+    };
+
+    const co2litro = 2.31;
+
+    function aggiornaAlimentazioni() {
+      const categoria = document.getElementById("categoria").value;
+      const alimentazioni = Object.keys(consumiMedi[categoria]);
+      const select = document.getElementById("alimentazione");
+      select.innerHTML = "";
+      alimentazioni.forEach(al => {
+        const option = document.createElement("option");
+        option.value = al;
+        option.textContent = al;
+        select.appendChild(option);
+      });
+    }
+
+    function calcolaRisparmioAvanzato() {
+      const categoria = document.getElementById("categoria").value;
+      const alimentazione = document.getElementById("alimentazione").value;
+      const km = parseFloat(document.getElementById("km").value);
+      const mezzoAlternativo = document.getElementById("mezzoAlternativo").value;
+
+      if (!km || km <= 0) {
+        document.getElementById("risultato").innerText = "Inserisci una distanza valida";
+        return;
+      }
+
+      const consumo = consumiMedi[categoria][alimentazione];
+      const costoUnitario = prezzi[alimentazione];
+      const unita = alimentazione.includes("Elettrica") ? "kWh" : alimentazione.includes("Idrogeno") ? "kg" : "litri";
+
+      const usati = (consumo / 100) * km;
+      const costoOriginale = usati * costoUnitario;
+      const co2 = alimentazione.includes("(l/100km)") ? usati * co2litro : 0;
+
+      const costoAlternativo = alternative[mezzoAlternativo] * km;
+      const risparmio = costoOriginale - costoAlternativo;
+
+      const risultato = `
+        🚗 Mezzo originale: <strong>${usati.toFixed(2)} ${unita}</strong> (${consumo} ${unita}/100km), €${costoOriginale.toFixed(2)} al giorno<br>
+        ${co2 > 0 ? `🌍 CO₂ evitata: <strong>${co2.toFixed(2)} kg</strong><br>` : ""}
+        🚌 Nuovo mezzo (${mezzoAlternativo}): €${costoAlternativo.toFixed(2)} al giorno<br>
+        ${risparmio >= 0
+          ? `<strong>💰 Risparmio giornaliero: €${risparmio.toFixed(2)}</strong>`
+          : `<strong style='color:#d32f2f;'>⚠️ Hai speso €${Math.abs(risparmio).toFixed(2)} in più, ma hai inquinato meno!</strong>`}
+      `;
+
+      document.getElementById("risultato").innerHTML = risultato;
+    }
+
+    window.onload = () => {
+      const catSelect = document.getElementById("categoria");
+      Object.keys(consumiMedi).forEach(cat => {
+        const option = document.createElement("option");
+        option.value = cat;
+        option.textContent = cat;
+        catSelect.appendChild(option);
+      });
+      aggiornaAlimentazioni();
+    }
+  </script>
+</body>
+</html>

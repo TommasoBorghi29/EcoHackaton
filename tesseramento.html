@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Tesseramento - EcoMe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .tesseramento-header {
+      background-color: #e6f4ea;
+      text-align: center;
+      padding: 2.5rem 1rem 1rem;
+    }
+
+    .tesseramento-header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .tesseramento-header p {
+      font-size: 1.2rem;
+      color: #2d2d2d;
+    }
+
+    .tesseramento-section {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    .tesseramento-section h2 {
+      color: #4caf50;
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .tesseramento-section p {
+      font-size: 1.1rem;
+      line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+
+    .form-container {
+      background-color: #ffffff;
+      border: 2px solid #d3e8d0;
+      border-radius: 12px;
+      padding: 2rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    }
+
+    .form-container label {
+      display: block;
+      font-weight: 600;
+      margin: 1rem 0 0.5rem;
+    }
+
+    .form-container input {
+      width: 100%;
+      padding: 0.75rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      margin-bottom: 1rem;
+    }
+
+    .form-container button {
+      background-color: #4caf50;
+      color: white;
+      font-weight: 600;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .form-container button:hover {
+      background-color: #388e3c;
+      transform: scale(1.03);
+    }
+
+    .motivazione-box {
+      font-style: italic;
+      color: #2d2d2d;
+      margin-top: -0.5rem;
+      font-size: 0.95rem;
+    }
+
+    .btn-home {
+      display: block;
+      margin: 3rem auto 2rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+    }
+
+    .btn-home:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="tesseramento-header">
+    <h1>Io mi tessero per...</h1>
+    <p>Unisciti alla community EcoMe con un gesto semplice ma potente.</p>
+  </header>
+
+  <section class="tesseramento-section">
+    <h2>Perché tesserarsi?</h2>
+    <p>Il tesseramento è un atto di partecipazione e appartenenza. Ogni tessera è una dichiarazione d'amore per l'ambiente e per la comunità.</p>
+    <p>Con la campagna <strong>“Io mi tessero per...”</strong> puoi personalizzare il tuo impegno: per i miei figli, per il mio quartiere, per il futuro. Cosa ti spinge ad agire? Scrivilo nel modulo!</p>
+
+    <h2>📝 Compila il modulo</h2>
+    <div class="form-container">
+      <form id="form-tesseramento">
+        <label for="nome">Nome e Cognome:</label>
+        <input type="text" id="nome" name="nome" placeholder="Il tuo nome completo" required />
+
+        <label for="email">Email:</label>
+        <input type="email" id="email" name="email" placeholder="La tua email" required />
+
+        <label for="motivazione">Io mi tessero per...</label>
+        <input type="text" id="motivazione" name="motivazione" placeholder="Es. i miei figli, il mio quartiere, il futuro" required />
+        <p class="motivazione-box">💡 Scrivi una motivazione che ti rappresenta: sarà stampata sulla tua tessera simbolica.</p>
+
+        <button type="submit">Invia richiesta</button>
+      </form>
+    </div>
+  </section>
+
+  <a class="btn-home" href="index.html">Torna alla Home</a>
+
+  <footer>
+    &copy; 2025 EcoMe - Iniziativa per la transizione ecologica. Contatti: info@ecome.it
+  </footer>
+
+  <script>
+    const formEcoRadar = document.getElementById('form-ecoradar');
+    if (formEcoRadar) {
+      formEcoRadar.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('✅ Grazie per la tua segnalazione! 🛰️');
+        formEcoRadar.reset(); // facoltativo: svuota il form
+      });
+    }
+
+    const formTesseramento = document.getElementById('form-tesseramento');
+    if (formTesseramento) {
+      formTesseramento.addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('🎉 Grazie per esserti tesserato! 🌱');
+        formTesseramento.reset(); // facoltativo: svuota il form
+      });
+    }
+  </script>
+</body>
+</html>

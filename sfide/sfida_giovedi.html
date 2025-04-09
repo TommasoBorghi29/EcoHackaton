@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>EcoMe - Sfida del Giovedì</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/style.css">
+  <style>
+    .sfida-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .sfida-page h2 {
+      color: #4caf50;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .sfida-page h3 {
+      margin-top: 2rem;
+      color: #388e3c;
+    }
+    .sfida-page p, .sfida-page li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .sfida-page ul {
+      padding-left: 1.2rem;
+    }
+    .highlight {
+      background-color: #e8f5e9;
+      border-left: 4px solid #66bb6a;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .photo-upload {
+      background-color: #fef9e7;
+      border: 2px dashed #f9a825;
+      padding: 1.5rem;
+      margin-top: 2rem;
+      border-radius: 12px;
+      text-align: center;
+    }
+    .photo-upload input[type="file"] {
+      margin: 1rem 0;
+    }
+    .photo-upload button {
+      background-color: #f9a825;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+    }
+    #conferma {
+      color: green;
+      display: none;
+      margin-top: 1rem;
+    }
+    .btn-home {
+      display: block;
+      margin: 3rem auto 0;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoMe</h1>
+    <p>Il cambiamento parte da me, passa per noi</p>
+  </header>
+
+  <section class="sfida-page">
+    <h2>📅 Giovedì: Rifiuti Zero</h2>
+    <p>Oggi prova a vivere senza produrre rifiuti! Dì no alla plastica monouso, porta con te la tua borraccia, il tuo sacchetto riutilizzabile e magari il tuo contenitore per il pranzo. Acquista solo ciò che ti serve, evita il superfluo e preferisci prodotti sfusi, riciclabili e duraturi.</p>
+
+    <div class="highlight">
+      <h3>🎯 Obiettivo concreto della sfida:</h3>
+      <ul>
+        <li>Produci meno di <strong>100 grammi</strong> di rifiuti totali</li>
+        <li>Oppure, contieni tutto in un barattolo da 500 ml</li>
+        <li>Evita completamente rifiuti <strong>non compostabili o non riciclabili</strong></li>
+      </ul>
+    </div>
+
+    <div class="highlight">
+      <p>📊 La media italiana è di <strong>1,3 kg</strong> di rifiuti al giorno. Oggi tu puoi ridurre del <strong>90%</strong> la tua impronta!</p>
+    </div>
+
+    <h3>💡 Idee pratiche per riuscirci:</h3>
+    <ul>
+      <li>Porta la tua tazza al bar</li>
+      <li>Fai spesa nei negozi <em>zero waste</em> o al mercato</li>
+      <li>Prepara il pranzo a casa, senza imballaggi</li>
+      <li>Usa fazzoletti di stoffa, ricariche, prodotti sfusi</li>
+    </ul>
+
+    <div class="photo-upload">
+      <h3>📸 Documenta la tua giornata!</h3>
+      <p>Carica una foto del tuo kit o della tua azione sostenibile.</p>
+      <form id="fotoForm" onsubmit="inviaFoto(event)">
+        <input type="file" accept="image/*" required>
+        <button type="submit">Invia</button>
+        <div id="conferma">✅ Commento inviato!</div>
+      </form>
+    </div>
+
+    <p style="margin-top: 2rem;">Condividi tutto anche sui social con l’hashtag <strong>#EcoMeGiovedì</strong>. Dimostra che si può fare!</p>
+  </section>
+
+  <a class="btn-home" href="../sfide.html">Torna alle Sfide</a>
+
+  <footer>
+    &copy; 2025 EcoMe - Iniziativa per la transizione ecologica. Contatti: info@ecome.it
+  </footer>
+
+  <script>
+    function inviaFoto(event) {
+      event.preventDefault();
+      document.getElementById("conferma").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("conferma").style.display = "none";
+        event.target.reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>

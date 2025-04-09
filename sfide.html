@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Le Sfide EcoMe</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="css/style.css"/>
+  <style>
+    .sfide-header {
+      text-align: center;
+      padding: 2.5rem 1rem 1rem;
+      background-color: #e6f4ea;
+    }
+
+    .sfide-header h1 {
+      font-size: 2.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .sfide-header p {
+      font-size: 1.2rem;
+      color: #2d2d2d;
+      margin: 0;
+    }
+
+    .challenges {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 2rem;
+    }
+
+    .challenge {
+      background-color: #ffffff;
+      border: 2px solid #d3e8d0;
+      border-radius: 12px;
+      padding: 1.5rem;
+      text-align: center;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .challenge:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    }
+
+    .challenge h3 {
+      color: #4caf50;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .challenge p {
+      font-size: 1rem;
+      line-height: 1.5;
+      color: #333;
+    }
+
+    .btn-scopri {
+      display: inline-block;
+      background-color: #ffa726;
+      color: white;
+      padding: 0.6rem 1.2rem;
+      font-size: 0.95rem;
+      font-weight: 600;
+      border-radius: 8px;
+      margin-top: 1rem;
+      text-decoration: none;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+
+    .btn-scopri:hover {
+      background-color: #fb8c00;
+      transform: scale(1.05);
+    }
+
+    .btn-home {
+      display: block;
+      margin: 3rem auto 2rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+    }
+
+    .btn-home:hover {
+      background-color: #388e3c;
+    }
+  </style>
+</head>
+<body>
+
+  <header class="sfide-header">
+    <h1>Le Sfide EcoMe</h1>
+    <p>7 giorni, 7 sfide sostenibili per cambiare il tuo stile di vita</p>
+  </header>
+
+  <section class="challenges">
+    <div class="challenge">
+      <h3>📅 Lunedì: Mobilità sostenibile</h3>
+      <p>Vai a scuola o al lavoro usando la bici, i mezzi pubblici o a piedi. Riduci le emissioni e scopri nuovi percorsi urbani.</p>
+      <a href="sfide/sfida_lunedi.html" class="btn-scopri">Scopri di più</a>
+    </div>
+    <div class="challenge">
+      <h3>⚡ Martedì: Energia consapevole</h3>
+      <p>Spegni gli apparecchi in standby, usa meno luce artificiale e prediligi il sole. Ogni kilowattora conta!</p>
+      <a href="sfide/sfida_martedi.html" class="btn-scopri">Scopri di più</a>
+    </div>
+    <div class="challenge">
+      <h3>🥗 Mercoledì: Alimentazione sostenibile</h3>
+      <p>Mangia locale, stagionale e con meno imballaggi. Prova un pasto vegetariano!</p>
+      <a href="sfide/sfida_mercoledi.html" class="btn-scopri">Scopri di più</a>
+    </div>
+    <div class="challenge">
+      <h3>♻️ Giovedì: Rifiuti zero</h3>
+      <p>Evita prodotti usa e getta, riutilizza e differenzia. Sfida: produci meno di 100g di rifiuti oggi!</p>
+      <a href="sfide/sfida_giovedi.html" class="btn-scopri">Scopri di più</a>
+    </div>
+    <div class="challenge">
+      <h3>📴 Venerdì: Detox digitale</h3>
+      <p>Riduci l'uso dello smartphone, esci all'aperto, parla con qualcuno dal vivo. Riconnettiti con il mondo reale.</p>
+      <a href="sfide/sfida_venerdi.html" class="btn-scopri">Scopri di più</a>
+    </div>
+    <div class="challenge">
+      <h3>🛒 Sabato: Acquisti responsabili</h3>
+      <p>Compra solo ciò che ti serve. Scegli prodotti locali, durevoli e magari usati.</p>
+      <a href="sfide/sfida_sabato.html" class="btn-scopri">Scopri di più</a>
+    </div>
+    <div class="challenge">
+      <h3>🤝 Domenica: Coinvolgi qualcuno</h3>
+      <p>Invita un amico, un familiare o un vicino a partecipare con te a EcoMe. L'ecologia è più bella se condivisa.</p>
+      <a href="sfide/sfida_domenica.html" class="btn-scopri">Scopri di più</a>
+    </div>
+  </section>
+
+  <a class="btn-home" href="index.html">Torna alla Home</a>
+
+  <footer>
+    &copy; 2025 EcoMe - Iniziativa per la transizione ecologica. Contatti: info@ecome.it
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>EcoMe - Sfida della Domenica</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="../css/style.css"/>
+  <style>
+    .sfida-page {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+    .sfida-page h2 {
+      color: #4caf50;
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .sfida-page h3 {
+      margin-top: 2rem;
+      color: #388e3c;
+    }
+    .sfida-page p, .sfida-page li {
+      font-size: 1.1rem;
+      line-height: 1.6;
+    }
+    .sfida-page ul {
+      padding-left: 1.2rem;
+    }
+    .highlight {
+      background-color: #f3faff;
+      border-left: 4px solid #2196f3;
+      padding: 1rem;
+      border-radius: 8px;
+      margin: 1.5rem 0;
+    }
+    .form-box {
+      background-color: #f0fdf4;
+      padding: 1.5rem;
+      border-radius: 12px;
+      border: 1px solid #c8e6c9;
+      margin-top: 2rem;
+    }
+    label {
+      display: block;
+      margin: 1rem 0 0.5rem;
+      font-weight: 600;
+    }
+    input, textarea {
+      width: 100%;
+      padding: 0.5rem;
+      font-size: 1rem;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+    }
+    .btn {
+      margin-top: 1.5rem;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    .btn:hover {
+      background-color: #388e3c;
+      transform: scale(1.03);
+    }
+    #conferma {
+      display: none;
+      margin-top: 1rem;
+      color: #2e7d32;
+      font-weight: bold;
+    }
+    .btn-home {
+      display: block;
+      margin: 3rem auto 0;
+      background-color: #4caf50;
+      color: white;
+      border: none;
+      padding: 0.75rem 1.5rem;
+      font-size: 1rem;
+      border-radius: 8px;
+      text-align: center;
+      cursor: pointer;
+      text-decoration: none;
+      width: fit-content;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>EcoMe</h1>
+    <p>Il cambiamento parte da me, passa per noi</p>
+  </header>
+
+  <section class="sfida-page">
+    <h2>🌱 Domenica: Coinvolgi qualcuno</h2>
+    <p>Invita un amico, un familiare o un vicino a partecipare con te a EcoMe. Condividere un’azione ecologica amplifica il suo impatto!</p>
+
+    <div class="highlight">
+      <h3>🎯 Obiettivo concreto della sfida:</h3>
+      <ul>
+        <li>Coinvolgi almeno una persona</li>
+        <li>Fate insieme una delle sfide settimanali</li>
+        <li>Scattate una foto per ricordare il momento</li>
+      </ul>
+    </div>
+
+    <div class="highlight">
+      <p>📊 Secondo uno studio, il 68% delle persone cambia abitudini sostenibili se ispirato da qualcuno vicino. Sei quel qualcuno!</p>
+    </div>
+
+    <h3>💡 Idee pratiche per la sfida:</h3>
+    <ul>
+      <li>Fate una passeggiata a piedi o in bici</li>
+      <li>Raccogliete rifiuti nel quartiere</li>
+      <li>Cucinate un pasto vegetariano insieme</li>
+      <li>Condividete consigli su uno stile di vita green</li>
+    </ul>
+
+    <div class="form-box">
+      <h3>📘 Racconta la tua esperienza</h3>
+      <form id="esperienzaForm" onsubmit="inviaEsperienza(event)">
+        <label for="nome">Chi hai coinvolto?</label>
+        <input type="text" id="nome" placeholder="Es. mia sorella, un collega, un vicino..." required>
+
+        <label for="attivita">Quale sfida avete fatto insieme?</label>
+        <textarea id="attivita" rows="4" placeholder="Descrivi l'attività che avete svolto insieme..." required></textarea>
+
+        <label for="foto">Carica una foto della vostra sfida</label>
+        <input type="file" id="foto" accept="image/*">
+
+        <button type="submit" class="btn">📤 Condividi la tua esperienza</button>
+        <div id="conferma">✅ Esperienza condivisa con successo!</div>
+      </form>
+    </div>
+
+    <p>📸 Condividi la tua sfida sui social con l'hashtag <strong>#EcoMeDomenica</strong> e tagga chi ti ha accompagnato. L'ecologia è più bella se vissuta insieme!</p>
+  </section>
+
+  <a class="btn-home" href="../sfide.html">Torna alle Sfide</a>
+
+  <footer>
+    &copy; 2025 EcoMe - Iniziativa per la transizione ecologica. Contatti: info@ecome.it
+  </footer>
+
+  <script>
+    function inviaEsperienza(event) {
+      event.preventDefault();
+      document.getElementById("conferma").style.display = "block";
+      setTimeout(() => {
+        document.getElementById("conferma").style.display = "none";
+        document.getElementById("esperienzaForm").reset();
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
